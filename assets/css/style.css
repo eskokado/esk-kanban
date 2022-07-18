@@ -185,6 +185,15 @@ font-family: 'Open Sans', sans-serif;
             margin: 6px 0 10px;
             padding: 10px;
             box-shadow: 0 1px 0 rgba(9,30,66,.25);
+            cursor: move;            
+          }
+          .app_board .app_secoes .app_secao ul li{
+            background-color: #fff;
+            border-radius: 4px;
+            margin: 6px 0 10px;
+            padding: 10px;
+            box-shadow: 0 1px 0 rgba(9,30,66,.25);
+            cursor: move;            
           }
             .app_board .app_secoes .app_secao ul li h2{
               font-size: 1rem;

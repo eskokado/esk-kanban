@@ -50,9 +50,22 @@ function imprimirSecoes(secao){
     appSecao.dataset.id = idSecao
 
     const  listaCards = document.createElement("ul")
+    listaCards.classList.add("dropzone")
+
+    const li = document.createElement("li")
+    li.draggable = true
+
+    li.addEventListener('dragstart', handleDragStart);
+    li.addEventListener('dragover', handleDragOver);
+    li.addEventListener('dragenter', handleDragEnter);
+    li.addEventListener('dragleave', handleDragLeave);
+    li.addEventListener('dragend', handleDragEnd);
+    li.addEventListener('drop', handleDrop);
+    
+    listaCards.appendChild(li)
 
     appSecao.appendChild(header)
-    appSecao.appendChild(listaCards)
+    appSecao.appendChild(listaCards)    
     appSecao.appendChild(footer)
     areaSecoes.appendChild(appSecao)
 
