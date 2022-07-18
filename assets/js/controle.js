@@ -66,3 +66,46 @@ function appSecaoFooter(secaoId){
     appSecaoFooter.innerHTML = templateFooter
     return appSecaoFooter
 }
+
+
+// -----------------------------------//
+// CONTROLES
+// -----------------------------------//
+
+const appButtonabrirSecao = document.querySelector('.app_add_secao .app_button_add_secao')
+const appContainerAddSecao = document.querySelector('.app_add_secao .app_container_add_secao')
+
+appButtonabrirSecao.addEventListener('click', function() {
+    appContainerAddSecao.classList.toggle('hidden')
+})
+
+function abrirAddCard() {
+    this.nextElementSibling.classList.toggle("hidden") 
+}
+
+function resetarAbrirAddCard(elemento) {
+    elemento.removeEventListener('click', abrirAddCard)
+    elemento.addEventListener('click', abrirAddCard)
+}
+
+function resetarSalvarCard(elemento) {
+    elemento.removeEventListener('click', salvarCard)
+    elemento.addEventListener('click', salvarCard)
+}
+
+function resetarControles(){
+    const botaoAbrirAddCard = document.querySelectorAll(".app_secao_footer > button")
+    botaoAbrirAddCard.forEach(resetarAbrirAddCard)
+
+    const botaoAddCard = document.querySelectorAll(".app_secao_footer_salvar_card")
+    botaoAddCard.forEach(resetarSalvarCard)
+}
+
+
+function mostrarMensagemValidacao(){
+    const mensagem = document.querySelector('#app .mensagem-validacao');
+    mensagem.classList.add('mostrar');
+    setTimeout(function(){
+        mensagem.classList.remove('mostrar');
+    }, 3500)
+}
