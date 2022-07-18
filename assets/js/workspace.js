@@ -36,4 +36,25 @@ class Workspace {
         this._secoes.push(secao)
         this._idSecao++
     }
+
+    adicionarCard(idSecao,card){
+        const secoes = this.secoes
+        const secaoLocalizado = this.findSecaoById(idSecao)
+        const index = this._secoes.indexOf(secaoLocalizado)
+        secoes[index].adicionarCard(card)
+    }
+
+    // removerSecao(secao){
+        
+    // }
+
+    removerCard(idCard,idSecao){
+     this.secoes[idSecao].removerCard(idCard)
+    }
+
+    findSecaoById(idSecao) {
+        const secaoLocalizado = this._secoes.find((secao) => secao.id == idSecao)
+        return secaoLocalizado
+    }
+
 }
